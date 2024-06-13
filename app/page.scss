@@ -33,7 +33,7 @@
     flex-direction: row;
     align-items: center;
 
-    .profile {
+    .silhoutte {
       border-left: 2px solid white;
       max-height: 50vh;
       width: auto;
@@ -61,6 +61,15 @@
       bottom: -24px;
       animation: MoveUpDown 1s linear infinite;
     }
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 822;
+  }
+  to {
+    stroke-dashoffset: 0;
   }
 }
 

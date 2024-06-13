@@ -1,8 +1,11 @@
+'use client'
+
 import Profile from '../assets/images/profile-no-background.png'
 import Image from 'next/image'
 import Silhoutte from '../assets/images/silhouette.svg'
 import ScrollDown from '../assets/images/scroll-down.svg'
 import './page.scss'
+import Silhouette from './components/silhouette'
 
 const Page = () => {
   return (
@@ -16,7 +19,15 @@ const Page = () => {
         </h1>
       </div>
       <div className="image-container">
-        <Image src={Silhoutte} alt="Silhoutte" className={'profile'} priority />
+        {/* <Image
+          src={Silhoutte}
+          alt="Silhoutte"
+          className={'silhoutte'}
+          priority
+        /> */}
+        <div className={'silhoutte'}>
+          <Silhouette />
+        </div>
       </div>
       <div className="scroll-container">
         <p className="scroll-container__text">Scroll down</p>
