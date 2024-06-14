@@ -155,7 +155,15 @@ const Page = () => {
     }
   }, [nextSection])
 
-  const arrayTest = ['test1', 'test2', '3', '4', '5']
+  const arrayTest = [
+    'Experience_1',
+    'Experience_2',
+    'Experience_3',
+    'Experience_4',
+    'Experience_5',
+    'Experience_6',
+    'Experience_7',
+  ]
 
   return (
     <main className="main" ref={mainRef}>
