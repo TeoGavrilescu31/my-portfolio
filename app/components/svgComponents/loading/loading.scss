@@ -1,0 +1,16 @@
+.loading-container {
+  .loading-path {
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+    animation: loadingDash 1.5s linear alternate infinite;
+  }
+}
+
+@keyframes loadingDash {
+  from {
+    stroke-dashoffset: 150;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

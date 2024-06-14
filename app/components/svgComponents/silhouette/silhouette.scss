@@ -1,0 +1,14 @@
+.silhouette-path {
+  stroke-dasharray: 750;
+  stroke-dashoffset: 750;
+  animation: dash 3s linear alternate infinite;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 750;
+  }
+  to {
+    stroke-dashoffset: 250;
+  }
+}
