@@ -1,4 +1,4 @@
-import './loading.scss'
+import './loading.scss';
 
 const Loading = () => {
   return (
@@ -82,7 +82,7 @@ const Loading = () => {
         />
       </svg>
     </div>
-  )
-}
+  );
+};
 
-export default Loading
+export default Loading;

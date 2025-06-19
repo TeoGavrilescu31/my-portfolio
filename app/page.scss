@@ -1,10 +1,14 @@
 .main {
-  // padding: 6rem;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  scrollbar-width: 0;
-  scroll-behavior: smooth;
   height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   .hero-text-container {
     scroll-snap-align: start;
@@ -22,8 +26,7 @@
       font-family: 'Rubik', sans-serif;
       font-weight: 800;
       font-size: 96px;
-      padding-right: 30px;
-      padding-left: 30px;
+      padding: 0 30px;
 
       &__name {
         color: transparent;
@@ -43,201 +46,197 @@
         border-left: 2px solid white;
         max-height: 50vh;
         width: auto;
-        // filter: drop-shadow(5px 0 0 var(--secondary-color))
-        // drop-shadow(0 5px 0 var(--secondary-color))
-        //   drop-shadow(-5px 0 0 var(--tertiary-color))
-        //   drop-shadow(0 -5px 0 var(--tertiary-color));
       }
     }
   }
 
-  .scroll-container {
-    position: fixed;
-    bottom: 0;
-    margin-bottom: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    transition: all 0.5s ease;
-    cursor: pointer;
+  // .scroll-container {
+  //   position: fixed;
+  //   bottom: 3rem;
+  //   width: 100%;
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   cursor: pointer;
+  //   transition: all 0.5s ease;
 
-    &__text {
-      position: relative;
-    }
+  //   &__text {
+  //     position: relative;
+  //   }
 
-    &__icon {
-      position: absolute;
-      bottom: -24px;
-      animation: MoveUpDown 1s linear infinite;
-    }
+  //   &__icon {
+  //     position: absolute;
+  //     bottom: -24px;
+  //     animation: MoveUpDown 1s linear infinite;
+  //   }
 
-    &.left-scroll-container {
-      color: var(--background-color);
-      svg {
-        fill: var(--background-color);
-      }
-    }
-  }
+  //   &.left-scroll-container {
+  //     color: var(--background-color);
 
-  .test {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    scroll-snap-align: start;
-    font-family: 'Rubik', sans-serif;
-    font-weight: 800;
-    font-size: 96px;
-  }
+  //     svg {
+  //       fill: var(--background-color);
+  //     }
+  //   }
+  // }
 
-  .test.left {
-    background: white;
-    color: var(--background-color);
-  }
+  // .panel {
+  //   height: 100vh;
+  //   width: 100%;
+  //   scroll-snap-align: start;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   font-family: 'Rubik', sans-serif;
+  //   font-weight: 800;
+  //   font-size: 96px;
 
-  .navigation-arrows {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    display: flex;
-    flex-direction: column;
+  //   &.left {
+  //     background-color: white;
+  //     color: var(--background-color);
+  //   }
+  // }
 
-    & > .disabled {
-      svg {
-        opacity: 0;
-        cursor: default;
-      }
-    }
-    svg {
-      fill: white;
-      margin-bottom: 10px;
-      transition: all 0.5s ease;
-      cursor: pointer;
-    }
+  // .navigation-arrows {
+  //   position: absolute;
+  //   left: 10px;
+  //   top: 50%;
+  //   display: flex;
+  //   flex-direction: column;
 
-    &.left-navigation {
-      svg {
-        fill: var(--background-color);
-      }
-    }
-  }
+  //   svg {
+  //     fill: white;
+  //     margin-bottom: 10px;
+  //     transition: all 0.5s ease;
+  //     cursor: pointer;
+  //   }
+
+  //   .disabled svg {
+  //     opacity: 0;
+  //     cursor: default;
+  //   }
+
+  //   &.left-navigation svg {
+  //     fill: var(--background-color);
+  //   }
+  // }
 }
 
-@keyframes dash {
-  from {
-    stroke-dashoffset: 822;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
+/* Animations */
+// @keyframes MoveUpDown {
+//   0%,
+//   100% {
+//     bottom: -24px;
+//   }
+//   50% {
+//     bottom: -48px;
+//   }
+// }
 
-@keyframes MoveUpDown {
-  0%,
-  100% {
-    bottom: -24px;
-  }
-  50% {
-    bottom: -48px;
-  }
-}
-
-// TODO Rework this!!!!
-@media (min-width: 0) {
-  /* smartphones, iPhone, portrait 480x320 phones */
+/* Media Queries */
+@media (max-width: 480px) {
   .main {
     .hero-text-container {
       .hero-text {
         font-size: 40px;
+
         &__name {
           font-size: 46px;
         }
       }
     }
-    .test {
+
+    .panel {
       font-size: 40px;
     }
   }
 }
-@media (min-width: 481px) {
-  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+@media (min-width: 481px) and (max-width: 640px) {
   .main {
     .hero-text-container {
       .hero-text {
         font-size: 50px;
+
         &__name {
           font-size: 56px;
         }
       }
-    }
-    .test {
-      font-size: 50px;
+
+      .panel {
+        font-size: 50px;
+      }
     }
   }
 }
-@media (min-width: 641px) {
-  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+
+@media (min-width: 641px) and (max-width: 960px) {
   .main {
     .hero-text-container {
       .hero-text {
         font-size: 60px;
+
         &__name {
           font-size: 68px;
         }
       }
-    }
-    .test {
-      font-size: 60px;
+
+      .panel {
+        font-size: 60px;
+      }
     }
   }
 }
-@media (min-width: 961px) {
-  /* tablet, landscape iPad, lo-res laptops ands desktops */
+
+@media (min-width: 961px) and (max-width: 1024px) {
   .main {
     .hero-text-container {
       .hero-text {
         font-size: 70px;
+
         &__name {
           font-size: 80px;
         }
       }
-    }
-    .test {
-      font-size: 70px;
+
+      .panel {
+        font-size: 70px;
+      }
     }
   }
 }
-@media (min-width: 1025px) {
-  /* big landscape tablets, laptops, and desktops */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
   .main {
     .hero-text-container {
       .hero-text {
         font-size: 80px;
+
         &__name {
           font-size: 100px;
         }
       }
-    }
-    .test {
-      font-size: 80px;
+
+      .panel {
+        font-size: 80px;
+      }
     }
   }
 }
+
 @media (min-width: 1281px) {
-  /* hi-res laptops and desktops */
   .main {
     .hero-text-container {
       .hero-text {
         font-size: 96px;
+
         &__name {
           font-size: 110px;
         }
       }
-    }
-    .test {
-      font-size: 96px;
+
+      .panel {
+        font-size: 96px;
+      }
     }
   }
 }
