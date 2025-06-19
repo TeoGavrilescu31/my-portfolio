@@ -1,10 +1,10 @@
-'use client'
+'use client';
 
-import React, { useEffect, useRef, useState } from 'react'
-import './silhouette.scss'
+import React, { useRef } from 'react';
+import './silhouette.scss';
 
 const Silhouette = () => {
-  const silhouetteRef = useRef<SVGPathElement>(null)
+  const silhouetteRef = useRef<SVGPathElement>(null);
 
   // const handleScroll = () => {
   //   if (!silhouetteRef.current) {
@@ -82,7 +82,7 @@ const Silhouette = () => {
         />
       </svg>
     </>
-  )
-}
+  );
+};
 
-export default Silhouette
+export default Silhouette;

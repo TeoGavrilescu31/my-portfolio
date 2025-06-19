@@ -1,4 +1,4 @@
-import './scrollDown.scss'
+import './scrollDown.scss';
 
 const ScrollDown = () => {
   return (
@@ -18,7 +18,7 @@ const ScrollDown = () => {
         />
       </svg>
     </>
-  )
-}
+  );
+};
 
-export default ScrollDown
+export default ScrollDown;

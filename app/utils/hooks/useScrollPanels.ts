@@ -117,6 +117,7 @@ export const useScrollPanels = () => {
     }
     return () => {
       if (mainRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         (mainRef.current as HTMLDivElement).removeEventListener('scroll', handleScroll);
       }
     };

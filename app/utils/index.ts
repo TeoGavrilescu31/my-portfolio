@@ -1,1 +1,1 @@
-export * from './hooks/useScrollPanels'
+export * from './hooks/useScrollPanels';
