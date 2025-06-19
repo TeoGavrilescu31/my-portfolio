@@ -1,0 +1,16 @@
+.panel {
+  height: 100vh; // Full viewport height
+  width: 100%; // Full width
+  scroll-snap-align: start; // Align start for snapping
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 800;
+  font-size: 96px; // Adjust font size as needed
+
+  &.left {
+    background-color: white;
+    color: var(--background-color); // Your background text color variable
+  }
+}
